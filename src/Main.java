@@ -54,11 +54,12 @@ public class Main {
                 break;
 
             case 3:
+
                 break;
 
             case 4:
                if(queue.getActualTurn() != null){
-                   queue.setActualTurn(queue.getActualTurn().getNext());
+                   queue.nextTurn();
                    System.out.println("--> Nuevo turno: " + queue.getActualTurn().getNumTurn());
                } else{
                    System.out.println("No hay mas turnos");

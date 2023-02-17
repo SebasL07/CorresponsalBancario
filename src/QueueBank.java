@@ -73,8 +73,16 @@ public class QueueBank {
         }
 
         return pointer;
+    }
 
+    public void nextTurn(){
+        setActualTurn(actualTurn.getNext());
+    }
+    public void passTurn(){
+        int n = actualTurn.getNumTurn();
 
+        actualTurn.setOpportunities(n+1);
+        nextTurn();
     }
 
 

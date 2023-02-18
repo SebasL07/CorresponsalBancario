@@ -54,16 +54,19 @@ public class Main {
                 break;
 
             case 3:
+                if(queue.getActualTurn() != null){
+                    queue.passTurn();
+                    System.out.println("--> Nuevo turno: " + queue.getActualTurn().getNumTurn());
+                } else{
+                    System.out.println("No hay turnos");
+                }
 
                 break;
 
             case 4:
-               if(queue.getActualTurn() != null){
-                   queue.nextTurn();
-                   System.out.println("--> Nuevo turno: " + queue.getActualTurn().getNumTurn());
-               } else{
-                   System.out.println("No hay mas turnos");
-               }
+
+                queue.nextTurn();
+                System.out.println("--> Nuevo turno: " + queue.getActualTurn().getNumTurn());
 
                 break;
 

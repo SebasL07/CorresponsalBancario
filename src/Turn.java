@@ -11,8 +11,8 @@ public class Turn {
         return opportunities;
     }
 
-    public void setOpportunities(int opportunities) {
-        this.opportunities = opportunities;
+    public void setOpportunities() {
+        this.opportunities = opportunities+1;
     }
 
     public int getNumTurn() {
@@ -40,6 +40,8 @@ public class Turn {
     }
 
     public Turn(int numTurn) {
+
         this.numTurn = numTurn;
+        this.opportunities = 0;
     }
 }

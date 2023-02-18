@@ -76,13 +76,31 @@ public class QueueBank {
     }
 
     public void nextTurn(){
+        deleteTurn();
         setActualTurn(actualTurn.getNext());
     }
     public void passTurn(){
-        int n = actualTurn.getNumTurn();
+        if(actualTurn.getOpportunities()<3){
+            actualTurn.setOpportunities();
+            actualTurn = actualTurn.getNext();
+        }else{
+            deleteTurn();
+        }
+    }
 
-        actualTurn.setOpportunities(n+1);
-        nextTurn();
+    public void deleteTurn(){
+        /*
+        if (actualTurn == first) {
+            //first.getPrevious().setNext(first.getNext());
+            first = first.getNext();
+        }else{
+
+        }
+        */
+
+        actualTurn.getPrevious().setNext(actualTurn.getNext());
+        actualTurn.getNext().setPrevious(actualTurn.getPrevious());
+
     }
 
 
